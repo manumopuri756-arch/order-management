@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Order Management{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Customer Order Dashboard{% endblock %}</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p style="text-align:center; margin-top:20px; color:#666;">
+            &copy; 2026 E-commerce Dashboard
+        </p>
+    </footer>
+</body>
+</html>

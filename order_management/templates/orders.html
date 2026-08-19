@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="analytics">  
+    <p>Highest Value Order: {{ highest_order.customer_name }} - ${{ highest_order.total_amount }}</p>  
+    <p>Most Active Customer: {{ active_customer.customer_name }} - {{ active_customer.order_count }} orders</p>  
+</div>  
+
+<table>  
+    <tr>  
+        <th>Order ID</th>  
+        <th>Customer</th>  
+        <th>Product</th>  
+        <th>Quantity</th>  
+        <th>Price</th>  
+        <th>Total Amount</th>  
+        <th>Order Date</th>  
+    </tr>  
+    {% for order in history %}  
+    <tr>  
+        <td>{{ order.order_id }}</td>  
+        <td>{{ order.customer_name }}</td>  
+        <td>{{ order.product_name }}</td>  
+        <td>{{ order.quantity }}</td>  
+        <td>${{ order.price }}</td>  
+        <td>${{ order.total_amount }}</td>  
+        <td>{{ order.order_date }}</td>  
+    </tr>  
+    {% endfor %}  
+</table>
+{% endblock %}
